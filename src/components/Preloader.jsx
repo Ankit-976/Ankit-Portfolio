@@ -93,32 +93,32 @@ const Preloader = ({ setLoading, navLogoRef }) => {
   return (
     <div
       ref={containerRef}
-      className="preloader md:fixed md:top-0 bg-black z-50 md:left-0 md:h-screen md:w-full md:flex md:justify-center md:items-center cursor-none"
+      className="preloader fixed top-0 bg-black z-50 left-0 h-screen w-screen flex justify-center items-center cursor-none"
     >
-      <div className="md:flex md:flex-col md:items-center md:gap-10">
-        <div className="md:flex md:justify-center">
-          <img ref={logoRef} src={BatLogo} className="md:h-20 md:opacity-40" />
+      <div className="flex flex-col items-center gap-5 md:gap-10">
+        <div className="flex justify-center">
+          <img ref={logoRef} src={BatLogo} className="h-13 md:h-20 opacity-40" />
         </div>
-        <div className="md:flex postLogoFade md:flex-col md:items-center md:text-2xl md:font-['Space_Grotesk'] md:tracking-[0.4rem] md:gap-2 md:opacity-80 text-[#cbcbcb]">
+        <div className="flex postLogoFade flex-col items-center text-xl md:text-2xl font-['Space_Grotesk'] tracking-widest md:tracking-[0.4rem] md:gap-2 opacity-80 text-[#cbcbcb]">
           DISCIPLINE OVER FEAR.
-          <div className="md:h-0.5 md:w-55 md:relative md:bg-[#1f1f1f]">
+          <div className="h-0.5 w-45 md:w-55 relative bg-[#1f1f1f]">
             <div
               ref={lineRef}
-              className="md:bg-[#e9c349] md:absolute md:top-0 md:h-full md:w-full"
+              className="bg-[#e9c349] absolute top-0 h-full w-full"
             ></div>
           </div>
         </div>
-        <div className="md:flex postLogoFade md:justify-around md:items-center md:w-full md:opacity-50 md:font-['Inter']">
+        <div className="flex postLogoFade justify-around items-center w-full opacity-50 font-['Inter']">
           <div>
-            <ul className="md:flex md:flex-col md:tracking-widest md:items-center md:text-[0.7rem]/4 md:font-light">
+            <ul className="flex flex-col tracking-widest items-center text-[0.7rem]/4 font-light">
               <li className="text-[#cbcbcb]">SYSTEM STATUS</li>
-              <li className="md:text-[#e9c349]">ENCRYPTED</li>
+              <li className="text-[#e9c349]">ENCRYPTED</li>
             </ul>
           </div>
           <div>
-            <ul className="md:flex md:flex-col md:tracking-widest md:items-center md:text-[0.7rem]/4 md:font-light">
+            <ul className="flex flex-col tracking-widest items-center text-[0.7rem]/4 font-light">
               <li className="text-[#cbcbcb]">IDENTITY</li>
-              <li className="md:text-[#e9c349]">CONFIRMED</li>
+              <li className="text-[#e9c349]">CONFIRMED</li>
             </ul>
           </div>
         </div>

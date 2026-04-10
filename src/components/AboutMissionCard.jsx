@@ -29,22 +29,22 @@ const AboutMissionCard = () => {
   // Final format
   const formattedTime = `${year}.${month}.${date}_${hours}:${minutes}:${seconds}`;
   return (
-    <div className="bg-[#131313] w-250 h-105 px-12 py-8 flex flex-col gap-8">
+    <div className="bg-[#131313] w-fit md:w-250 h-fit md:h-105 px-6 md:px-12 py-4 md:py-8 flex flex-col gap-3 md:gap-8">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
-          <span className='block font-["Space_Grotesk"] text-[1.8rem]/9 tracking-wider'>
+          <span className='block font-["Space_Grotesk"] md:text-[1.8rem]/9 tracking-wider'>
             ACTIVE_MISSION
           </span>
-          <span className="block text-[0.7rem] font-semibold tracking-[0.3rem] text-[#e9c449da]">
+          <span className="block text-[0.6rem] md:text-[0.7rem] font-semibold tracking-[0.2rem] md:tracking-[0.3rem] text-[#e9c449da]">
             STATUS: IN PROGRESS
           </span>
         </div>
-        <span className="block text-5xl font-semibold tracking-tight font-['Space_Grotesk'] text-[#afafaf18]">
+        <span className="block text-3xl md:text-5xl font-semibold tracking-tight font-['Space_Grotesk'] text-[#afafaf18]">
           LOG_08
         </span>
       </div>
       <hr className="text-[#afafaf0a]  "/>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div>
           <p className='font-semibold font-["Inter"] tracking-wider'>
             Mission: Backend Mastery
@@ -63,36 +63,36 @@ const AboutMissionCard = () => {
         </div>
       </div>
       <hr className="text-[#afafaf0a]  "/>
-      <div className="flex gap-50">
+      <div className="flex gap-10 md:gap-50 flex-wrap">
         <div className="flex gap-3">
-          <img src={exchangeLogo} className=" h-5" />
-          <div className="flex flex-col gap-2">
-            <span className="block text-[0.75rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
+          <img src={exchangeLogo} className="h-4 md:h-5" />
+          <div className="flex flex-col md:gap-2">
+            <span className="block text-[0.6rem] md:text-[0.75rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
               PROTOCOL 01
             </span>
-            <span className="block font-['Inter'] font-semibold">
+            <span className="block font-['Inter'] font-semibold text-[0.9rem] md:text-[1rem]">
               Archiving Distributed Systems
             </span>
           </div>
         </div>
         <div className="flex gap-3">
-          <img src={codeLogo} className="h-7" />
-          <div className="flex flex-col gap-2">
-            <span className="block text-[0.75rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
+          <img src={codeLogo} className="h-6 md:h-7" />
+          <div className="flex flex-col md:gap-2">
+            <span className="block text-[0.6rem] md:text-[0.75rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
               PROTOCOL 02
             </span>
-            <span className="block font-['Inter'] font-semibold">
+            <span className="block font-['Inter'] font-semibold md:text-[1rem] text-[0.9rem]">
               Refactoring API Handlers
             </span>
           </div>
         </div>
       </div>
       <hr className="text-[#afafaf18]  "/>
-      <div className="flex justify-between">
-        <span className="block text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf4d]">
+      <div className="flex justify-between flex-wrap gap-2 md:gap-0">
+        <span className="block text-[0.7rem] md:text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf4d]">
           SYSTEM_CHECK: OPTIMAL
         </span>
-        <span className="block text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf4d] tabular-nums ">
+        <span className="block text-[0.7rem] md:text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf4d] tabular-nums ">
           TIMESTAMP: {formattedTime}
         </span>
       </div>
