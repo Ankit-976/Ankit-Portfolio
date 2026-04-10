@@ -1,16 +1,141 @@
-# React + Vite
+# 🦇 Batman Themed Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinematic and minimal developer portfolio built with a focus on **precision, performance, and clean UI/UX**.
+Designed to create a strong first impression through smooth animations and a dark, system-inspired aesthetic.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+👉 https://ankit-portfolio-seven-lilac.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* ⚡ **GSAP Powered Preloader**
+
+  * Logo animation with smooth transition into navbar
+  * Center-origin loading line animation
+
+* 🎬 **Cinematic Hero Section**
+
+  * Subtle video background
+  * Clean typography and strong visual hierarchy
+
+* 🧠 **Minimal & System-Based Design**
+
+  * Strict color system (black, grey, gold)
+  * Focused typography (Space Grotesk + Inter)
+
+* 🎯 **Smooth Animations**
+
+  * GSAP timeline-based transitions
+  * Controlled and non-distracting motion
+
+---
+
+## 🛠 Tech Stack
+
+* **Frontend:** React (Vite)
+* **Styling:** Tailwind CSS
+* **Animations:** GSAP
+* **Other:** Shery.js (via CDN)
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+ ├── components/
+ │    ├── Navbar.jsx
+ │    ├── Preloader.jsx
+ │    └── ...
+ ├── pages/
+ ├── assets/
+ └── App.jsx
+ └── Layout.jsx
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Ankit-976/Ankit-Portfolio.git
+cd Ankit-Portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 🚀 Deployment
+
+Deployed using **Vercel**.
+
+Steps:
+
+1. Push code to GitHub
+2. Import project in Vercel
+3. Deploy
+
+---
+
+## 🎨 Design Philosophy
+
+This portfolio follows a **minimal and cinematic approach**:
+
+* No unnecessary UI clutter
+* Strong typography hierarchy
+* Subtle animations over flashy effects
+* Accent color used intentionally (gold)
+
+---
+
+## 📌 Future Improvements
+
+* Performance optimization (image compression)
+* Advanced cursor interactions
+* More sections (projects, about, contact)
+* Improved mobile responsiveness
+
+---
+
+## 🙌 Acknowledgements
+
+* GSAP for powerful animation capabilities
+* Inspiration from cinematic UI and system interfaces
+
+---
+
+## 📬 Contact
+
+Feel free to connect or reach out:
+
+* Email: ankitbasa113@gmail.com
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!
