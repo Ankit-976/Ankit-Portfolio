@@ -3,16 +3,13 @@ import bgHome from "../assets/bgHome.png";
 import Button from "../components/Button";
 import HomeCard from "../components/HomeCard";
 import bgHome2 from "../assets/bgHome2.png";
-import { log } from "three";
 
 const Home = () => {
-  const [notMobile, setNotMobile] = useState(window.innerWidth >= 768);
+  const [notMobile, setNotMobile] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
     const handleResize = () => {
-      setNotMobile(window.innerWidth >= 768);
-      console.log(window.innerWidth);
-      
+      setNotMobile(window.innerWidth >= 1024);
     };
 
     window.addEventListener("resize", handleResize);
@@ -20,15 +17,14 @@ const Home = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [notMobile]);
-
-  // const notMobile = window.innerWidth >= 768 ? true : false;
+  }, []);
 
   useEffect(() => {
-    if (!notMobile) return;
 
-    console.log("hello");
-    
+    // const hasMouse = window.matchMedia("(pointer: fine)").matches;
+    // if (!hasMouse) return;
+
+    if (!notMobile) return;
 
     Shery.imageEffect(".imageContainer", {
       style: 5,
@@ -65,7 +61,7 @@ const Home = () => {
         noise_scale: { value: 33.59, range: [0, 100] },
       },
     });
-  }, []);
+  }, [notMobile]);
 
   const HomeCards = [
     {
@@ -90,27 +86,27 @@ const Home = () => {
     },
   ];
   return (
-    <div className="relative min-h-screen">
-      <div className="imageContainer hidden md:block absolute z-[-1] md:w-full ">
-        <img src={bgHome} className=" md:w-full md:h-screen object-cover" />
-        <img src={bgHome2} className=" md:w-full object-cover" />
+    <div className="relative min-h-screen" id="home">
+      <div className="imageContainer hidden lg:block absolute z-[-1] lg:w-full ">
+        <img src={bgHome} className=" lg:w-full lg:h-screen object-cover" />
+        <img src={bgHome2} className=" lg:w-full lg:h-screen object-cover" />
       </div>
-      <div className=" md:h-screen md:w-full z-9 md:absolute flex flex-col items-start justify-center px-7 md:px-25 md:gap-35 gap-8 py-15">
-        <div className="md:w-180 flex flex-col items-start gap-5 md:gap-5">
-          <div className="flex items-center gap-2 md:gap-4 px-2">
+      <div className=" h-fit md:min-h-screen md:w-full z-9 md:absolute flex flex-col items-start justify-center px-7 md:px-15 md:gap-10 gap-8 lg:gap-5 xl:px-25 xl:gap-20 py-15 sm:pt-10 md:py-15 xl:py-20"> 
+        <div className="md:max-w-180 flex flex-col items-start gap-5 lg:gap-3 xl:gap-5">
+          <div className="flex items-center gap-2 md:gap-4 lg:gap-2 xl:gap-4 px-2">
             <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
-            <span className='block text-[#e9c349] font-["Space_Grotesk"] md:tracking-widest text-[0.7rem] opacity-60'>
+            <span className='block text-[#e9c349] font-["Space_Grotesk"] sm:tracking-wider md:tracking-widest sm:text-[0.8rem] text-[0.7rem] opacity-60'>
               ACCESSING PERSONNEL FILE // 042
             </span>
           </div>
-          <h1 className='font-["Space_Grotesk"] md:text-[10rem]/35 text-8xl/20 font-semibold tracking-tighter text-[#e5e5e5]'>
-            ANKIT BASA
+          <h1 className='font-["Space_Grotesk"] sm:text-9xl/30 md:text-[10rem]/35 text-8xl/20 lg:text-[8.5rem]/28 xl:text-[10rem]/35 font-semibold tracking-tighter text-[#e5e5e5]'>
+            ANKIT <br className="sm:block hidden"/> BASA
           </h1>
           <div className="flex flex-col gap-2">
-            <span className='text-[#efefef] md:text-4xl text-3xl font-["Space_Grotesk"]'>
+            <span className='text-[#efefef] md:text-4xl lg:text-[2rem] xl:text-4xl text-3xl font-["Space_Grotesk"]'>
               Frontend Developer
             </span>
-            <p className='text-[#9f9f9fc3] md:text-xl font-["Inter"]'>
+            <p className='text-[#9f9f9fc3] md:text-xl lg:text-[1rem] xl:text-xl font-["Inter"]'>
               Crafting immersive front-end experiences while{" "}
               <br className="md:flex hidden" /> architecting the logic of
               tomorrow.
@@ -121,7 +117,7 @@ const Home = () => {
             <Button message={"CONTACT ME"} color={"#000000"} />
           </div>
         </div>
-        <div className="flex gap-5 md:gap-10 flex-wrap">
+        <div className="flex gap-5 md:gap-10 xl:gap-15 flex-wrap">
           {HomeCards.map((card) => {
             return (
               <HomeCard
