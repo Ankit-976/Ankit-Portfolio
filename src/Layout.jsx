@@ -4,6 +4,7 @@ import Preloader from "./components/Preloader";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Lenis from "lenis";
+import Skills from "./pages/Skills";
 
 export let lenis;
 
@@ -40,6 +41,7 @@ const Layout = () => {
       {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />}
       <Home />
       <About />
+      <Skills />
     </div>
   );
 };

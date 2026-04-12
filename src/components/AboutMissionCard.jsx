@@ -29,7 +29,7 @@ const AboutMissionCard = () => {
   // Final format
   const formattedTime = `${year}.${month}.${date}_${hours}:${minutes}:${seconds}`;
   return (
-    <div className="bg-[#131313] w-fit md:w-250 h-fit md:h-105 px-6 md:px-12 py-4 md:py-8 flex flex-col gap-3 md:gap-8">
+    <div className="bg-[#131313] w-fit md:w-250 h-fit md:h-105 px-6 md:px-12 py-4 md:py-8 flex flex-col gap-3 md:gap-7 lg:gap-8">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
           <span className='block font-["Space_Grotesk"] md:text-[1.8rem]/9 tracking-wider'>
@@ -63,14 +63,14 @@ const AboutMissionCard = () => {
         </div>
       </div>
       <hr className="text-[#afafaf0a]  "/>
-      <div className="flex gap-10 md:gap-50 flex-wrap">
+      <div className="flex gap-10 lg:gap-50 flex-wrap md:flex-nowrap">
         <div className="flex gap-3">
           <img src={exchangeLogo} className="h-4 md:h-5" />
           <div className="flex flex-col md:gap-2">
-            <span className="block text-[0.6rem] md:text-[0.75rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
+            <span className="block text-[0.6rem] md:text-[0.65rem]/2 lg:text-[0.75rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
               PROTOCOL 01
             </span>
-            <span className="block font-['Inter'] font-semibold text-[0.9rem] md:text-[1rem]">
+            <span className="block font-['Inter'] font-semibold text-[0.9rem] md:text-[0.88rem] lg:text-[1rem]">
               Archiving Distributed Systems
             </span>
           </div>
@@ -78,10 +78,10 @@ const AboutMissionCard = () => {
         <div className="flex gap-3">
           <img src={codeLogo} className="h-6 md:h-7" />
           <div className="flex flex-col md:gap-2">
-            <span className="block text-[0.6rem] md:text-[0.75rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
+            <span className="block text-[0.6rem] lg:text-[0.75rem]/2 md:text-[0.65rem]/2 font-semibold font-['Space_Grotesk'] text-[#afafafb3] tracking-widest">
               PROTOCOL 02
             </span>
-            <span className="block font-['Inter'] font-semibold md:text-[1rem] text-[0.9rem]">
+            <span className="block font-['Inter'] font-semibold lg:text-[1rem] text-[0.9rem] md:text-[0.88rem]">
               Refactoring API Handlers
             </span>
           </div>

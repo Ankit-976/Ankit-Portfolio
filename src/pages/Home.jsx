@@ -86,7 +86,7 @@ const Home = () => {
     },
   ];
   return (
-    <div className="relative min-h-screen" id="home">
+    <div className="relative min-h-screen data-section" id="home">
       <div className="imageContainer hidden lg:block absolute z-[-1] lg:w-full ">
         <img src={bgHome} className=" lg:w-full lg:h-screen object-cover" />
         <img src={bgHome2} className=" lg:w-full lg:h-screen object-cover" />
@@ -117,7 +117,7 @@ const Home = () => {
             <Button message={"CONTACT ME"} color={"#000000"} />
           </div>
         </div>
-        <div className="flex gap-5 md:gap-10 xl:gap-15 flex-wrap">
+        <div className="flex gap-5 md:gap-10 flex-wrap xl:flex-nowrap">
           {HomeCards.map((card) => {
             return (
               <HomeCard

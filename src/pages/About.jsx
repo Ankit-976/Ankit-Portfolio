@@ -68,7 +68,7 @@ const About = () => {
     
   ]
   return (
-    <div className="text-white md:min-h-screen flex flex-col justify-center px-7 md:px-20 gap-2 md:gap-15 md:py-30 py-10 sm:pt-0" id="about">
+    <div className="data-section text-white md:min-h-screen flex flex-col justify-center px-7 md:px-20 gap-2 md:gap-10 xl:gap-15 md:pt-20 lg:pt-40 xl:pt-20 py-10 sm:pt-0" id="about">
       <div className="flex flex-col">
         <div className="flex items-center gap-2 md:gap-4 px-1">
           <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
@@ -99,7 +99,7 @@ const About = () => {
           performance and silent in complexity.
         </p>
       </div>
-      <div className="flex items-start gap-5 md:gap-40 flex-wrap">
+      <div className="flex items-start gap-5 md:gap-10 xl:gap-40 flex-wrap">
         {aboutCards.map((card) => {
           return <AboutCard key={card.id} title={card.title} module={card.module} items={card.items} />
         })}
