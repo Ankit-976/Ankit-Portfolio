@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Lenis from "lenis";
 import Skills from "./pages/Skills";
+import Contact from "./pages/Contact";
 
 export let lenis;
 
@@ -42,6 +43,7 @@ const Layout = () => {
       <Home />
       <About />
       <Skills />
+      <Contact />
     </div>
   );
 };
