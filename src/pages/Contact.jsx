@@ -92,11 +92,11 @@ const Contact = () => {
             </span>
           </div>
         </div>
-        <div className=" lg:w-270 lg:p-10 flex flex-col gap-10">
+        <div className=" max-w-160 lg:p-10 flex flex-col gap-10">
           <div className="bg-[#141414] p-5 py-8 lg:py-15">
             <form className="flex flex-col  gap-8 lg:gap-10">
-              <div className="flex justify-between flex-wrap gap-5">
-                <div className="flex flex-col w-70 gap-3 ">
+              <div className="flex justify-between flex-wrap md:flex-nowrap gap-5">
+                <div className="flex flex-col  w-70 gap-3 ">
                   <label
                     htmlFor="nameInput"
                     className="text-[0.95rem] tracking-widest"
@@ -106,7 +106,7 @@ const Contact = () => {
                   <input
                     type="text"
                     className="nameInput w-[90%] h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
-                    placeholder="OPERATIVE NAME"
+                    placeholder="OPERATIVE NAME" required
                   />
                 </div>
                 <div className="flex flex-col w-70 gap-3">
@@ -119,7 +119,7 @@ const Contact = () => {
                   <input
                     type="text"
                     className="communicationNode h-10 w-[90%] border-b border-[#6a6969] text-[0.9rem] outline-none"
-                    placeholder="EMAIL ADDRESS"
+                    placeholder="EMAIL ADDRESS" required
                   />
                 </div>
               </div>
@@ -134,7 +134,7 @@ const Contact = () => {
                   <input
                     type="text"
                     className="communicationNode h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
-                    placeholder="PROJECT CODENAME / INQUIRE TYPE"
+                    placeholder="PROJECT CODENAME / INQUIRE TYPE" required
                   />
                 </div>
               </div>
@@ -152,13 +152,13 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              <span
+              <button
                 type="submit"
                 className="flex h-13 max-w-65 bg-[#ffce2c] justify-center items-center text-[0.85rem] cursor-pointer text-black"
                 onClick={handleSubmit}
               >
                 INFILTRATE MY INBOX
-              </span>
+              </button>
             </form>
           </div>
           <span className="text-[#9f9f9f] flex justify-end w-full  text-[0.8rem]">
