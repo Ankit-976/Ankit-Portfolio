@@ -1,16 +1,78 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import shieldLogo from "../assets/shield.png";
 import codeLogo from "../assets/code.png";
 import instaLogo from "../assets/instagram.png";
+import emailjs from "@emailjs/browser";
+import axios from "axios";
+import { error } from "three";
 
 const Contact = () => {
+  const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+  const SHEETS_URL = import.meta.env.VITE_SHEETS_URL;
+
+  const formRef = useRef();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    inquireType: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const regex =
+      /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-\.]*)[a-z0-9_'+\-]@([a-z0-9][a-z0-9\-]*\.)+[a-z]{2,}$/i;
+
+    if (!regex.test(formData.email)) {
+      alert("Invalid email");
+
+      return;
+    }
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          setFormData({
+            name: "",
+            email: "",
+            inquireType: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        },
+      );
+
+      fetch(SHEETS_URL,{
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: (`name= ${e.target.name.value}&email= ${e.target.email.value}&inquireType= ${e.target.inquireType.value}&message= ${e.target.message.value}`)
+      })
+      .then(res => res.text())
+      .catch(error => console.log(error))
+
     // submit api
-    alert("submitted");
   };
   return (
-    <div className='text-white flex flex-col gap-5 lg:gap-10 px-7 md:px-20 lg:px-25 pt-10 min-h-screen font-["Space_Grotesk"]'>
+    <div
+      className='text-white flex flex-col gap-5 lg:gap-10 px-7 md:px-20 lg:px-25 pt-20 min-h-screen font-["Space_Grotesk"]'
+      id="contact"
+    >
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2 px-1">
           <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
@@ -46,7 +108,7 @@ const Contact = () => {
                 DIRECT CHANNEL
               </span>
               <span className="block text-[1rem] tracking-wider">
-                ankitbasa113@gmail.com
+                ankitbasa976@gmail.com
               </span>
             </div>
             <div className="flex flex-col gap-4">
@@ -94,7 +156,11 @@ const Contact = () => {
         </div>
         <div className=" max-w-160 lg:p-10 flex flex-col gap-10">
           <div className="bg-[#141414] p-5 py-8 lg:py-15">
-            <form className="flex flex-col  gap-8 lg:gap-10">
+            <form
+              className="flex flex-col  gap-8 lg:gap-10"
+              onSubmit={handleSubmit}
+              ref={formRef}
+            >
               <div className="flex justify-between flex-wrap md:flex-nowrap gap-5">
                 <div className="flex flex-col  w-70 gap-3 ">
                   <label
@@ -106,7 +172,11 @@ const Contact = () => {
                   <input
                     type="text"
                     className="nameInput w-[90%] h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
-                    placeholder="OPERATIVE NAME" required
+                    placeholder="OPERATIVE NAME"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="flex flex-col w-70 gap-3">
@@ -117,9 +187,13 @@ const Contact = () => {
                     COMMUNICATION NODE
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     className="communicationNode h-10 w-[90%] border-b border-[#6a6969] text-[0.9rem] outline-none"
-                    placeholder="EMAIL ADDRESS" required
+                    placeholder="EMAIL ADDRESS"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -134,7 +208,11 @@ const Contact = () => {
                   <input
                     type="text"
                     className="communicationNode h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
-                    placeholder="PROJECT CODENAME / INQUIRE TYPE" required
+                    placeholder="PROJECT CODENAME / INQUIRE TYPE"
+                    name="inquireType"
+                    required
+                    value={formData.inquireType}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -149,13 +227,16 @@ const Contact = () => {
                   <textarea
                     className=" communicationNode h-25 lg:h-32 w-full border-b border-[#6a6969] text-[0.9rem] outline-none pt-4 resize-none"
                     placeholder="MESSAGE BODY..."
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
               <button
                 type="submit"
                 className="flex h-13 max-w-65 bg-[#ffce2c] justify-center items-center text-[0.85rem] cursor-pointer text-black"
-                onClick={handleSubmit}
               >
                 INFILTRATE MY INBOX
               </button>
