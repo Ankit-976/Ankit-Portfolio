@@ -17,7 +17,7 @@ const Navbar = ({ navLogoRef }) => {
       });
     },
     {
-      rootMargin: "-40% 0px -40% 0px", // 🔥 best for portfolios
+      rootMargin: "-40% 0px -40% 0px",
     }
   );
 

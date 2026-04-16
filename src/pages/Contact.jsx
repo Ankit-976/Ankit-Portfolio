@@ -28,6 +28,7 @@ const Contact = () => {
       [name]: value,
     });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -65,12 +66,10 @@ const Contact = () => {
       })
       .then(res => res.text())
       .catch(error => console.log(error))
-
-    // submit api
   };
   return (
     <div
-      className='text-white flex flex-col gap-5 lg:gap-10 px-7 md:px-20 lg:px-25 pt-20 min-h-screen font-["Space_Grotesk"]'
+      className='text-white data-section flex flex-col gap-5 lg:gap-10 px-7 md:px-20 lg:px-25 pt-20 min-h-screen font-["Space_Grotesk"]'
       id="contact"
     >
       <div className="flex flex-col gap-2">
@@ -236,7 +235,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="flex h-13 max-w-65 bg-[#ffce2c] justify-center items-center text-[0.85rem] cursor-pointer text-black"
+                className="flex h-13 max-w-65 bg-[#ffce2c] justify-center items-center text-[0.85rem] cursor-pointer text-black transition-all duration-150  active:scale-95"
               >
                 INFILTRATE MY INBOX
               </button>

@@ -24,16 +24,19 @@ const Skills = () => {
     },
   ];
   return (
-    <div className="min-h-screen text-white pt-20 px-7 md:px-20 flex flex-col md:gap-15 gap-0 py-10 data-section" id="skills">
-      <div className="flex flex-col">
-        <div className="flex items-center gap-2 md:gap-4 px-1">
-          <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
-          <span className='block text-[#e9c349] font-["Space_Grotesk"] text-[0.7rem] opacity-60'>
-            INTEL BRIEF: CAPABILITIES
-          </span>
+    <div
+      className="min-h-screen text-white pt-20 px-7 md:px-20 flex flex-col md:gap-15 gap-0 py-10 data-section"
+      id="skills"
+    >
+      <div className='flex flex-col gap-5 font-["Space_Grotesk"]'>
+        <div className="flex flex-col">
+          <div className="flex items-center gap-2 md:gap-4 px-1">
+            <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
+            <span className='block text-[#e9c349] font-["Space_Grotesk"] text-[0.7rem] opacity-60'>
+              INTEL BRIEF: CAPABILITIES
+            </span>
+          </div>
         </div>
-      </div>
-      <div className='flex flex-col gap-5 font-bold font-["Space_Grotesk"]'>
         <h1 className="text-7xl/20 md:text-[7rem]/25 tracking-tight">
           TECHNICAL
         </h1>
@@ -52,14 +55,14 @@ const Skills = () => {
         <div className="relative w-full lg:w-[65%] pr-6 lg:pr-12 border-r p-10 bg-linear-to-t from-[#171616] to-black border-[#1a1a1a]">
           <div className="flex justify-between items-start">
             <h1 className="text-3xl md:text-5xl font-semibold mb-10">
-            Frontend{" "}
-            <span className="text-[#e9c349] text-base md:text-lg">
-              [DEPLOYED]
+              Frontend{" "}
+              <span className="text-[#e9c349] text-base md:text-lg">
+                [DEPLOYED]
+              </span>
+            </h1>
+            <span className=" absolute flex text-[0.8rem] md:text-[0.8rem]/1 font-semibold tracking-tight text-[#9f9f9f64] flex-nowrap right-5 top-5">
+              SECTOR_01 // INTERFACE
             </span>
-          </h1>
-          <span className=" absolute flex text-[0.8rem] md:text-[0.8rem]/1 font-semibold tracking-tight text-[#9f9f9f64] flex-nowrap right-5 top-5">
-            SECTOR_01 // INTERFACE
-          </span>
           </div>
           <div className="grid grid-cols-1 bg-linear-to-t from-[#131005] to-black  pb-20 md:pb-50 md:grid-cols-2 gap-8">
             {frontendSkills.map((item, i) => (
@@ -82,14 +85,14 @@ const Skills = () => {
         <div className=" relative w-full lg:w-[35%] mt-12 lg:mt-0 lg:pl-12 bg-[#9f9f9f34] p-10">
           <div className="flex justify-between items-start">
             <h1 className="text-3xl md:text-5xl font-semibold mb-10 flex flex-col">
-            Backend{" "}
-            <span className="text-gray-500 text-base md:text-lg">
-              [IN PROGRESS]
+              Backend{" "}
+              <span className="text-gray-500 text-base md:text-lg">
+                [IN PROGRESS]
+              </span>
+            </h1>
+            <span className="absolute right-5 top-5 block text-[0.8rem] md:text-[0.8rem]/1 font-semibold tracking-tight text-[#9f9f9f64] flex-nowrap">
+              SECTOR_02 // CORE
             </span>
-          </h1>
-          <span className="absolute right-5 top-5 block text-[0.8rem] md:text-[0.8rem]/1 font-semibold tracking-tight text-[#9f9f9f64] flex-nowrap">
-            SECTOR_02 // CORE
-          </span>
           </div>
           <div className="space-y-8">
             {backendSkills.map((item, i) => (
