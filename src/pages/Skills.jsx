@@ -25,10 +25,10 @@ const Skills = () => {
   ];
   return (
     <div
-      className="min-h-screen text-white pt-20 px-7 md:px-20 flex flex-col md:gap-15 gap-0 py-10 data-section"
+      className="min-h-screen text-white pt-20 px-7 md:px-10 lg:px-20 flex flex-col md:gap-10 lg:gap-15 gap-0 py-10 data-section"
       id="skills"
     >
-      <div className='flex flex-col gap-5 font-["Space_Grotesk"]'>
+      <div className='flex flex-col md:gap-5 font-["Space_Grotesk"]'>
         <div className="flex flex-col">
           <div className="flex items-center gap-2 md:gap-4 px-1">
             <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
@@ -37,24 +37,24 @@ const Skills = () => {
             </span>
           </div>
         </div>
-        <h1 className="text-7xl/20 md:text-[7rem]/25 tracking-tight">
+        <h1 className="text-6xl/20 sm:text-7xl/15 md:text-[7rem]/25 tracking-tight">
           TECHNICAL
         </h1>
-        <h1 className="md:text-[7rem] text-7xl/20 text-[#e9c349] tracking-tight">
+        <h1 className="md:text-[7rem]/25 sm:text-7xl/25 text-6xl/20 text-[#e9c349] tracking-tight">
           ARSENAL
         </h1>
       </div>
       <div>
-        <p className="text-[#afafaf] font-['Inter'] max-w-190 text-wrap text-[1.3rem]">
+        <p className="text-[#afafaf] font-['Inter'] max-w-190 text-wrap md:text-[1.3rem]">
           Surgical precision in digital architecture. A curated stack Of
           technologies deployed for high-performance interface design and
           scalable infrastructure.
         </p>
       </div>
       <div className=" w-full h-full text-white flex flex-col lg:flex-row font-[Space_Grotesk]">
-        <div className="relative w-full lg:w-[65%] pr-6 lg:pr-12 border-r p-10 bg-linear-to-t from-[#171616] to-black border-[#1a1a1a]">
+        <div className="relative w-full lg:w-[65%] md:pr-6 lg:pr-12 border-r md:p-10 p-5 bg-linear-to-t from-[#171616] to-black border-[#1a1a1a]">
           <div className="flex justify-between items-start">
-            <h1 className="text-3xl md:text-5xl font-semibold mb-10">
+            <h1 className="text-3xl flex flex-col md:text-5xl font-semibold mb-10">
               Frontend{" "}
               <span className="text-[#e9c349] text-base md:text-lg">
                 [DEPLOYED]

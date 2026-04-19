@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import BatLogo from "../assets/logobatman.png";
 import { lenis } from "../Layout";
 
@@ -37,7 +37,7 @@ const Navbar = ({ navLogoRef }) => {
   }
 
   return (
-    <div className="fixed top-0 w-full h-8 md:h-13 flex items-center justify-between px-2 md:px-15 z-20 bg-black">
+    <div className="fixed top-0 w-full h-8 md:h-13 flex items-center justify-between px-2 md:px-15 z-20 backdrop-blur-3xl">
       <div>
         <img
           ref={navLogoRef}

@@ -4,7 +4,6 @@ import codeLogo from "../assets/code.png";
 import instaLogo from "../assets/instagram.png";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
-import { error } from "three";
 
 const Contact = () => {
   const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
@@ -41,23 +40,23 @@ const Contact = () => {
       return;
     }
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
-        publicKey: PUBLIC_KEY,
-      })
-      .then(
-        () => {
-          setFormData({
-            name: "",
-            email: "",
-            inquireType: "",
-            message: "",
-          });
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        },
-      );
+    // emailjs
+    //   .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+    //     publicKey: PUBLIC_KEY,
+    //   })
+    //   .then(
+    //     () => {
+    //       setFormData({
+    //         name: "",
+    //         email: "",
+    //         inquireType: "",
+    //         message: "",
+    //       });
+    //     },
+    //     (error) => {
+    //       console.log("FAILED...", error.text);
+    //     },
+    //   );
 
       fetch(SHEETS_URL,{
         method: "POST",
@@ -69,7 +68,7 @@ const Contact = () => {
   };
   return (
     <div
-      className='text-white data-section flex flex-col gap-5 lg:gap-10 px-7 md:px-20 lg:px-25 pt-20 min-h-screen font-["Space_Grotesk"]'
+      className='text-white data-section flex flex-col gap-2 sm:gap-4 lg:gap-10 px-7 md:px-20 lg:px-25 py-5 md:pt-20 min-h-screen font-["Space_Grotesk"]'
       id="contact"
     >
       <div className="flex flex-col gap-2">
@@ -79,21 +78,21 @@ const Contact = () => {
             MISSION CONTROL
           </span>
         </div>
-        <h1 className="text-4xl lg:text-[7rem]/25 tracking-tighter">
+        <h1 className="text-4xl sm:text-7xl/20 lg:text-[7rem]/25 tracking-tighter">
           ESTABLISH
         </h1>
       </div>
       <div>
-        <h1 className="text-4xl/10 lg:text-[7rem]/25 tracking-tighter text-[#e9c349]">
+        <h1 className="text-4xl/10 sm:text-7xl/20 lg:text-[7rem]/25 tracking-tighter text-[#e9c349]">
           SECURE
         </h1>
-        <h1 className="text-4xl/10 lg:text-[7rem]/25 tracking-tighter">
+        <h1 className="text-4xl/10 sm:text-7xl/15 lg:text-[7rem]/25 tracking-tighter">
           CONNECTION
         </h1>
       </div>
-      <div className="flex  font-['Space_Grotesk'] flex-col lg:flex-row gap-15 lg:gap-0">
-        <div className="lg:p-13 flex flex-col gap-20">
-          <div className="flex flex-col gap-10">
+      <div className="flex font-['Space_Grotesk'] flex-col xl:flex-row gap-10 lg:gap-0 items-center">
+        <div className="lg:p-13 flex flex-col gap-10 md:gap-20 xl:gap-20 lg:gap-10">
+          <div className="flex flex-col gap-5 sm:gap-7 md:gap-10">
             <span className="text-[#9f9f9f] text-[0.9rem]">
               SYSTEM DIRECTIVES
             </span>
@@ -118,7 +117,7 @@ const Contact = () => {
                 <a
                   href="https://github.com/Ankit-976"
                   target="_blank"
-                  className="outline-none"
+                  className="outline-none max-w-90"
                 >
                   <div className="flex justify-between p-5 max-w-90 bg-[#171717a9]">
                     <span className="text-[0.9rem]">GITHUB</span>
@@ -128,7 +127,7 @@ const Contact = () => {
                 <a
                   href="https://www.instagram.com/ankitbasa976?igsh=YXliYm9lMGZxdnlm"
                   target="_blank"
-                  className="outline-none"
+                  className="outline-none max-w-90"
                 >
                   <div className="flex justify-between p-5 max-w-90 bg-[#171717a9]">
                     <span className="text-[0.9rem]">INSTAGRAM</span>
@@ -138,7 +137,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="text-[#e5e5e5]  bg-[#171717] flex flex-col justify-center md:gap-3 font-['Space_Grotesk'] px-3 py-3 pr-15 lg:min-w-45 xl:w-80  lg:pr-0  md:py-5 xl:py-3 border-l-2 border-[#e9c349]">
+          <div className="text-[#e5e5e5]  bg-[#171717] flex flex-col justify-center sm:w-70 md:w-100 md:gap-3 font-['Space_Grotesk'] px-3 py-3 pr-15 lg:min-w-45 xl:w-80  lg:pr-0  md:py-5 xl:py-3 border-l-2 border-[#e9c349]">
             <span className="block text-[0.8rem] md:text-[0.8rem]/1 font-semibold tracking-tight text-[#9f9f9f64]">
               <img src={shieldLogo} className="h-9" />
             </span>
@@ -160,76 +159,82 @@ const Contact = () => {
               onSubmit={handleSubmit}
               ref={formRef}
             >
-              <div className="flex justify-between flex-wrap md:flex-nowrap gap-5">
+              <div className="flex justify-between flex-wrap sm:flex-nowrap gap-5">
                 <div className="flex flex-col  w-70 gap-3 ">
                   <label
-                    htmlFor="nameInput"
+                    htmlFor="nameNode"
                     className="text-[0.95rem] tracking-widest"
                   >
                     IDENTIFICATION
                   </label>
                   <input
                     type="text"
-                    className="nameInput w-[90%] h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
+                    className=" w-[90%] h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
                     placeholder="OPERATIVE NAME"
                     name="name"
+                    autoComplete="Name"
                     required
                     value={formData.name}
                     onChange={handleChange}
+                    id="nameNode"
                   />
                 </div>
                 <div className="flex flex-col w-70 gap-3">
                   <label
-                    htmlFor="communicationNode"
+                    htmlFor="emailNode"
                     className="text-[0.95rem] tracking-widest"
                   >
                     COMMUNICATION NODE
                   </label>
                   <input
                     type="email"
-                    className="communicationNode h-10 w-[90%] border-b border-[#6a6969] text-[0.9rem] outline-none"
+                    className=" h-10 w-[90%] border-b border-[#6a6969] text-[0.9rem] outline-none"
                     placeholder="EMAIL ADDRESS"
                     name="email"
                     required
+                    autoComplete='Email'
                     value={formData.email}
                     onChange={handleChange}
+                    id="emailNode"
                   />
                 </div>
               </div>
               <div>
                 <div className="flex flex-col gap-3">
                   <label
-                    htmlFor="communicationNode"
+                    htmlFor="inquiryNode"
                     className="text-[0.95rem] tracking-widest"
                   >
                     SUBJECT DIRECTIVE
                   </label>
                   <input
                     type="text"
-                    className="communicationNode h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
+                    className=" h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
                     placeholder="PROJECT CODENAME / INQUIRE TYPE"
                     name="inquireType"
                     required
                     value={formData.inquireType}
                     onChange={handleChange}
+                    id="inquiryNode"
                   />
                 </div>
               </div>
               <div>
                 <div className="flex flex-col gap-3">
                   <label
-                    htmlFor="communicationNode"
+                    htmlFor="messageNode"
                     className="text-[0.95rem] tracking-widest"
                   >
                     INTELLIGENCE DETAIL
                   </label>
                   <textarea
-                    className=" communicationNode h-25 lg:h-32 w-full border-b border-[#6a6969] text-[0.9rem] outline-none pt-4 resize-none"
+                    className="  h-25 lg:h-32 w-full border-b border-[#6a6969] text-[0.9rem] outline-none pt-4 resize-none"
                     placeholder="MESSAGE BODY..."
                     name="message"
                     required
                     value={formData.message}
                     onChange={handleChange}
+                    id="messageNode"
                   />
                 </div>
               </div>

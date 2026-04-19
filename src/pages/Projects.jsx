@@ -66,25 +66,25 @@ const Projects = () => {
   ];
   return (
     <div
-      className="data-section text-white md:min-h-screen flex flex-col justify-center px-7 md:px-20 gap-2 md:gap-10 xl:gap-15 md:pt-20 lg:pt-40 xl:pt-20 py-10 sm:pt-0 "
+      className="data-section text-white md:min-h-screen flex flex-col justify-center px-7 lg:px-20 gap-2 sm:gap-8 md:gap-10 xl:gap-15 md:pt-20 lg:pt-40 xl:pt-20 py-10 sm:pt-0 "
       id="projects"
     >
-      <div className="flex flex-col font-['Space_Grotesk']">
+      <div className="flex flex-col gap-2 md:gap-0 font-['Space_Grotesk']">
         <div className="flex items-center gap-2 md:gap-4 px-1">
           <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
           <span className='block text-[#e9c349] font-["Space_Grotesk"] text-[0.7rem] opacity-60'>
             IDENTITY VERIFIED // ACCESS GRANTED
           </span>
         </div>
-        <h1 className="text-4xl/20 md:text-[7rem]/25 tracking-tighter">
+        <h1 className="text-4xl/10 sm:text-7xl/20 md:text-[7rem]/25 tracking-tighter">
           SELECTED
         </h1>
-        <div className="md:text-[7rem]/10 text-4xl/20 text-[#e9c349] tracking-tighter font-['Space_Grotesk']">
+        <div className="md:text-[7rem]/25 sm:text-7xl/20 text-4xl/10 text-[#e9c349] tracking-tighter font-['Space_Grotesk']">
           WORKS_024
         </div>
       </div>
       <div>
-        <p className="text-[#afafaf] font-['Inter'] max-w-200 text-wrap text-[1.3rem]">
+        <p className="text-[#afafaf] font-['Inter'] max-w-200 text-wrap md:text-[1.3rem]">
           A surgical display of high-performance engineering. These projects
           represent the intersection of classified complexity and cinematic
           precision.
@@ -101,11 +101,11 @@ const Projects = () => {
           );
         })}
       </div>
-      <div className="flex items-center justify-between px-6 font-['Space_Grotesk']">
-        <span className="text-[#939292] text-[0.9rem] font-semibold">
+      <div className="flex items-center justify-between sm:px-6 font-['Space_Grotesk']">
+        <span className="text-[#939292] text-[0.7rem] md:text-[0.9rem] font-semibold">
           Page 01/01
         </span>
-        <span className="text-[#232323] cursor-wait font-semibold h-fit flex py-2.5 px-5 items-center w-fit tracking-widest text-[0.9rem] bg-[#e9c349]">
+        <span className="text-[#232323] cursor-wait font-semibold h-fit flex py-2 md:py-2.5 px-2 md:px-5 items-center w-fit tracking-widest text-[0.7rem] md:text-[0.9rem] bg-[#e9c349]">
           PROJECTS COMING
           <RiArrowDropDownLine />
         </span>

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Preloader from "./components/Preloader";
 import Home from "./pages/Home";
@@ -7,6 +7,7 @@ import Lenis from "lenis";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
+import Footer from "./components/Footer";
 
 export let lenis;
 
@@ -40,12 +41,13 @@ const Layout = () => {
   return (
     <div>
       <Navbar navLogoRef={navLogoRef} />
-      {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />}
+      {/* {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />} */}
       <Home />
       <About />
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 };
