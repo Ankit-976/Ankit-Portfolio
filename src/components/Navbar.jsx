@@ -37,7 +37,7 @@ const Navbar = ({ navLogoRef }) => {
   }
 
   return (
-    <div className="fixed top-0 w-full h-8 md:h-13 flex items-center justify-between px-2 md:px-15 z-20 backdrop-blur-3xl">
+    <div className="fixed top-0 w-full h-8 md:h-13 flex items-center justify-between px-2 md:px-15 z-40 backdrop-blur-3xl">
       <a target="_blank" href="/">
         <img
           ref={navLogoRef}

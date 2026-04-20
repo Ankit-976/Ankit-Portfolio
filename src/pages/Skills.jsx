@@ -1,4 +1,7 @@
-import React from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
   const frontendSkills = [
@@ -23,6 +26,38 @@ const Skills = () => {
       desc: "NoSQL database modeling and architecture.",
     },
   ];
+
+useEffect(() => {
+  frontendSkills.forEach((skill, i) => {
+    // Animate bar width
+    gsap.to(`#skill-bar-${i}`, {
+      width: `${skill.val}%`,
+      duration: 6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "#skills",
+        start: "-10% top",
+      },
+    });
+
+    // Animate percentage number
+    const counter = { val: 0 }; 
+    gsap.to(counter, {
+      val: skill.val,
+      duration: 6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "#skills",
+        start: "-10% top"
+      },
+      onUpdate: () => {
+        const el = document.getElementById(`skill-val-${i}`);
+        if (el) el.textContent = `${Math.round(counter.val)}%`;
+      },
+    });
+  });
+}, []);
+  
   return (
     <div
       className="min-h-screen text-white pt-20 px-7 md:px-10 lg:px-20 flex flex-col md:gap-10 lg:gap-15 gap-0 py-10 data-section"
@@ -52,7 +87,7 @@ const Skills = () => {
         </p>
       </div>
       <div className=" w-full h-full text-white flex flex-col lg:flex-row font-[Space_Grotesk]">
-        <div className="relative w-full lg:w-[65%] md:pr-6 lg:pr-12 border-r md:p-10 p-5 bg-linear-to-t from-[#171616] to-black border-[#1a1a1a]">
+        <div className="relative w-full lg:w-[65%] md:pr-6 lg:pr-12 border-r md:p-10 p-5 bg-linear-to-t from-[#171616] to-black z-0 border-[#1a1a1a]">
           <div className="flex justify-between items-start">
             <h1 className="text-3xl flex flex-col md:text-5xl font-semibold mb-10">
               Frontend{" "}
@@ -69,13 +104,14 @@ const Skills = () => {
               <div key={i}>
                 <div className="flex justify-between text-sm text-gray-300 mb-1">
                   <span>{item.name}</span>
-                  <span className="text-[#e9c349]">{item.val}%</span>
+                  <span className="text-[#e9c349]" id={`skill-val-${i}`}>0%</span>
                 </div>
 
                 <div className="w-full h-0.5 bg-[#2a2a2a]">
                   <div
                     className="h-full bg-[#e9c349]"
-                    style={{ width: `${item.val}%` }}
+                    id={`skill-bar-${i}`}
+                    style={{ width: `0%` }}
                   />
                 </div>
               </div>

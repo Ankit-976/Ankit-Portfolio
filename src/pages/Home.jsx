@@ -85,11 +85,11 @@ const Home = () => {
   ];
   return (
     <div className="relative min-h-screen data-section" id="home">
-      <div className="imageContainer hidden lg:block absolute z-8 lg:w-full ">
+      <div className="imageContainer hidden lg:block z-20 absolute lg:w-full ">
         <img src={bgHome} className=" lg:w-full lg:h-screen object-cover" />
         <img src={bgHome2} className=" lg:w-full lg:h-screen object-cover" />
       </div>
-      <div className=" h-fit md:min-h-screen md:w-full z-9 md:absolute flex flex-col items-start justify-center px-7 md:px-10 lg:px-15 md:gap-10 gap-8 lg:gap-5 xl:px-25 xl:gap-20 py-15 sm:pt-10 md:py-15 xl:py-20"> 
+      <div className=" h-fit md:min-h-screen md:w-full z-30 md:absolute flex flex-col items-start justify-center px-7 md:px-10 lg:px-15 md:gap-10 gap-8 lg:gap-5 xl:px-25 xl:gap-20 py-15 sm:pt-10 md:py-15 xl:py-20"> 
         <div className="md:max-w-180 flex flex-col items-start gap-5 lg:gap-3 xl:gap-5">
           <div className="flex items-center gap-2 md:gap-4 lg:gap-2 xl:gap-4 px-2">
             <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
