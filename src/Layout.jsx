@@ -8,6 +8,7 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
+import AnimatedLine from "./components/AnimatedLine";
 
 export let lenis;
 
@@ -41,9 +42,10 @@ const Layout = () => {
   return (
     <div>
       <Navbar navLogoRef={navLogoRef} />
-      {/* {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />} */}
+      {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />}
       <Home />
       <About />
+      <AnimatedLine />
       <Skills />
       <Projects />
       <Contact />
