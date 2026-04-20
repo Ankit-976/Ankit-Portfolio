@@ -1,6 +1,6 @@
 import ProjectCard from "../components/ProjectCard";
-import project1img from "../assets/project1.png";
-import project2img from "../assets/project2.png";
+import project1img from "../assets/project1.webp";
+import project2img from "../assets/project2.webp";
 import { RiArrowDropDownLine } from "@remixicon/react";
 
 const Projects = () => {

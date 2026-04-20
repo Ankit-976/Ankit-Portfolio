@@ -1,8 +1,8 @@
 import  { useEffect, useState } from "react";
-import bgHome from "../assets/bgHome.png";
+import bgHome from "../assets/bgHome.webp";
 import Button from "../components/Button";
 import HomeCard from "../components/HomeCard";
-import bgHome2 from "../assets/bgHome2.png";
+import bgHome2 from "../assets/bgHome2.webp";
 
 const Home = () => {
   const [notMobile, setNotMobile] = useState(window.innerWidth >= 1024);
@@ -51,7 +51,7 @@ const Home = () => {
         noEffectGooey: { value: true },
         onMouse: { value: 1 },
         noise_speed: { value: 8.09, range: [0, 10] },
-        metaball: { value: 0.14, range: [0, 2], _gsap: { id: 3 } },
+        metaball: { value: 0.25, range: [0, 2], _gsap: { id: 3 } },
         discard_threshold: { value: 1, range: [0, 1] },
         antialias_threshold: { value: 0, range: [0, 0.1] },
         noise_height: { value: 0.37, range: [0, 2] },
@@ -85,7 +85,7 @@ const Home = () => {
   ];
   return (
     <div className="relative min-h-screen data-section" id="home">
-      <div className="imageContainer hidden lg:block absolute z-[-1] lg:w-full ">
+      <div className="imageContainer hidden lg:block absolute z-8 lg:w-full ">
         <img src={bgHome} className=" lg:w-full lg:h-screen object-cover" />
         <img src={bgHome2} className=" lg:w-full lg:h-screen object-cover" />
       </div>

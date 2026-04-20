@@ -89,10 +89,10 @@ const AboutMissionCard = () => {
       </div>
       <hr className="text-[#afafaf18]  "/>
       <div className="flex justify-between flex-wrap gap-2 md:gap-0">
-        <span className="block text-[0.7rem] md:text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf4d]">
+        <span className="block text-[0.7rem] md:text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf]">
           SYSTEM_CHECK: OPTIMAL
         </span>
-        <span className="block text-[0.7rem] md:text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf4d] tabular-nums ">
+        <span className="block text-[0.7rem] md:text-[0.8rem] font-semibold font-['Space_Grotesk'] tracking-[0.12rem] text-[#afafaf] tabular-nums ">
           TIMESTAMP: {formattedTime}
         </span>
       </div>

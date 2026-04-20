@@ -7,8 +7,6 @@ const AnimatedLine = () => {
   const pathRef = useRef(null)
 
   useEffect(() => {
-    console.log(initialPath);
-    
     const svg = svgRef.current
     
     const handleMouseMove = (dets) => {

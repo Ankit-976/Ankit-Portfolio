@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BatLogo from "../assets/logobatman.png";
+import BatLogo from "../assets/logobatman.webp";
 import { lenis } from "../Layout";
 
 const Navbar = ({ navLogoRef }) => {
@@ -38,13 +38,13 @@ const Navbar = ({ navLogoRef }) => {
 
   return (
     <div className="fixed top-0 w-full h-8 md:h-13 flex items-center justify-between px-2 md:px-15 z-20 backdrop-blur-3xl">
-      <div>
+      <a target="_blank" href="/">
         <img
           ref={navLogoRef}
           src={BatLogo}
           className="h-6 md:h-8 md:cursor-pointer"
         />
-      </div>
+      </a>
       <div>
         <ul className='hidden md:flex md:gap-10 font-["Inter"] md:text-[0.9rem] md:text-[#e5e5e5] md:tracking-widest md:cursor-pointer'>
           <li

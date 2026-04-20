@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
-import BatLogo from "../assets/logobatman.png";
+import BatLogo from "../assets/logobatman.webp";
 
 const Preloader = ({ setLoading, navLogoRef }) => {
   const logoRef = useRef(null);

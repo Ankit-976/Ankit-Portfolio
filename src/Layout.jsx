@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
 import AnimatedLine from "./components/AnimatedLine";
+import CursorFollower from "./components/CursorFollower";
 
 export let lenis;
 
@@ -44,6 +45,7 @@ const Layout = () => {
       <Navbar navLogoRef={navLogoRef} />
       {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />}
       <Home />
+      <CursorFollower />
       <About />
       <AnimatedLine />
       <Skills />
