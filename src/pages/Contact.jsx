@@ -11,6 +11,9 @@ const Contact = () => {
   const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
   const SHEETS_URL = import.meta.env.VITE_SHEETS_URL;
 
+  console.log(SHEETS_URL);
+  
+
   const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
