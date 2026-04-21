@@ -9,10 +9,7 @@ const Contact = () => {
   const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
   const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
   const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
-  const SHEETS_URL = import.meta.env.VITE_SHEETS_URL;
-
-  console.log(SHEETS_URL);
-  
+  const SHEETS_URL = import.meta.env.VITE_SHEETS_URL;  
 
   const formRef = useRef();
   const [formData, setFormData] = useState({
@@ -60,30 +57,6 @@ const Contact = () => {
     //       console.log("FAILED...", error.text);
     //     },
     //   );
-
-
-    // fetch(SHEETS_URL, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: new URLSearchParams({
-    //     name: formData.name,
-    //     email: formData.email,
-    //     inquireType: formData.inquireType,
-    //     message: formData.message,
-    //   }),
-    // })
-    //   .then((res) => res.text())
-    //   .then(() => {
-    //     setFormData({
-    //       name: "",
-    //       email: "",
-    //       inquireType: "",
-    //       message: "",
-    //     });
-    //   })
-    //   .catch((error) => console.log(error));
-
-    console.log(SHEETS_URL);
     
       try {
     await axios.post(
@@ -209,7 +182,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    className=" w-[90%] h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
+                    className=" w-[90%] h-10 border-b border-[#6a6969] text-[0.9rem] outline-none bg-transparent"
                     placeholder="OPERATIVE NAME"
                     name="name"
                     autoComplete="Name"
@@ -228,7 +201,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    className=" h-10 w-[90%] border-b border-[#6a6969] text-[0.9rem] outline-none"
+                    className=" h-10 w-[90%] border-b border-[#6a6969] text-[0.9rem] outline-none bg-transparent"
                     placeholder="EMAIL ADDRESS"
                     name="email"
                     required
@@ -249,7 +222,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    className=" h-10 border-b border-[#6a6969] text-[0.9rem] outline-none"
+                    className=" h-10 border-b border-[#6a6969] text-[0.9rem] outline-none bg-transparent"
                     placeholder="PROJECT CODENAME / INQUIRE TYPE"
                     name="inquireType"
                     required
@@ -268,7 +241,7 @@ const Contact = () => {
                     INTELLIGENCE DETAIL
                   </label>
                   <textarea
-                    className="  h-25 lg:h-32 w-full border-b border-[#6a6969] text-[0.9rem] outline-none pt-4 resize-none"
+                    className="  h-25 lg:h-32 w-full border-b border-[#6a6969] text-[0.9rem] outline-none pt-4 resize-none bg-transparent"
                     placeholder="MESSAGE BODY..."
                     name="message"
                     required

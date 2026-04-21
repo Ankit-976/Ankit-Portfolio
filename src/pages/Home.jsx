@@ -1,11 +1,13 @@
-import  { useEffect, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import bgHome from "../assets/bgHome.webp";
 import Button from "../components/Button";
 import HomeCard from "../components/HomeCard";
 import bgHome2 from "../assets/bgHome2.webp";
+import gsap from "gsap";
 
 const Home = () => {
   const [notMobile, setNotMobile] = useState(window.innerWidth >= 1024);
+  const containerRef = useRef(null)
 
   useEffect(() => {
     const handleResize = () => {
@@ -82,7 +84,42 @@ const Home = () => {
       title: "LOCATION",
       technology: "22°14' N, 84°52' E",
     },
+    {
+      id: 5,
+      title: "PRIMARY CORE",
+      technology: "React",
+    },
+    {
+      id: 6,
+      title: "SYSTEMS",
+      technology: "Node.js",
+    },
+    {
+      id: 7,
+      title: "STORAGE",
+      technology: "MongoDB",
+    },
+    {
+      id: 8,
+      title: "LOCATION",
+      technology: "22°14' N, 84°52' E",
+    },
   ];
+
+  useEffect(() => {
+  const totalWidth = containerRef.current.scrollWidth / 2;
+
+  HomeCards.forEach((card, id) => {
+    gsap.to(`#card-${id+1}`, {
+    x: `-=${totalWidth}`,
+    duration: 50,
+    ease: "linear",
+    repeat: -1,
+  })
+  })
+
+}, []);
+
   return (
     <div className="relative min-h-screen data-section" id="home">
       <div className="imageContainer hidden lg:block z-20 absolute lg:w-full ">
@@ -115,13 +152,17 @@ const Home = () => {
             <Button message={"CONTACT ME"} color={"#000000"} section={"contact"}/>
           </div>
         </div>
-        <div className="flex gap-5 md:gap-10 flex-wrap xl:flex-nowrap">
+        <div 
+        ref={containerRef} 
+        className="flex gap-5 md:gap-10 flex-wrap lg:flex-nowrap h-30 lg:overflow-hidden xl:w-150 lg:w-110 p-3"
+        >
           {HomeCards.map((card) => {
             return (
               <HomeCard
                 key={card.id}
                 title={card.title}
                 technology={card.technology}
+                id={card.id}
               />
             );
           })}

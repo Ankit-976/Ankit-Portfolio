@@ -7,3 +7,14 @@ html, body{
 body::-webkit-scrollbar{
     display: none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #141414 inset !important;
+  box-shadow: 0 0 0px 1000px #141414 inset !important;
+  -webkit-text-fill-color: #e5e5e5 !important;
+  caret-color: #e5e5e5 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
