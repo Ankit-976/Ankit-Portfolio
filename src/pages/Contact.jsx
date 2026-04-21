@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import shieldLogo from "../assets/shield.png";
 import codeLogo from "../assets/code.png";
 import instaLogo from "../assets/instagram.png";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import axios from "axios";
 
 const Contact = () => {
@@ -58,13 +58,27 @@ const Contact = () => {
     //     },
     //   );
 
-      fetch(SHEETS_URL,{
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: (`name= ${e.target.name.value}&email= ${e.target.email.value}&inquireType= ${e.target.inquireType.value}&message= ${e.target.message.value}`)
+
+    fetch(SHEETS_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        name: formData.name,
+        email: formData.email,
+        inquireType: formData.inquireType,
+        message: formData.message,
+      }),
+    })
+      .then((res) => res.text())
+      .then(() => {
+        setFormData({
+          name: "",
+          email: "",
+          inquireType: "",
+          message: "",
+        });
       })
-      .then(res => res.text())
-      .catch(error => console.log(error))
+      .catch((error) => console.log(error));
   };
   return (
     <div
@@ -192,7 +206,7 @@ const Contact = () => {
                     placeholder="EMAIL ADDRESS"
                     name="email"
                     required
-                    autoComplete='Email'
+                    autoComplete="Email"
                     value={formData.email}
                     onChange={handleChange}
                     id="emailNode"
