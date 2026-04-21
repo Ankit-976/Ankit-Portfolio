@@ -80,6 +80,8 @@ const Contact = () => {
     //   })
     //   .catch((error) => console.log(error));
 
+    console.log(SHEETS_URL);
+    
       try {
     await axios.post(
       import.meta.env.VITE_SHEETS_URL,
