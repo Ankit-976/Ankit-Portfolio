@@ -28,7 +28,7 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const regex =
@@ -59,27 +59,48 @@ const Contact = () => {
     //   );
 
 
-    fetch(SHEETS_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
+    // fetch(SHEETS_URL, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: new URLSearchParams({
+    //     name: formData.name,
+    //     email: formData.email,
+    //     inquireType: formData.inquireType,
+    //     message: formData.message,
+    //   }),
+    // })
+    //   .then((res) => res.text())
+    //   .then(() => {
+    //     setFormData({
+    //       name: "",
+    //       email: "",
+    //       inquireType: "",
+    //       message: "",
+    //     });
+    //   })
+    //   .catch((error) => console.log(error));
+
+      try {
+    await axios.post(
+      import.meta.env.VITE_SHEETS_URL,
+      new URLSearchParams({
         name: formData.name,
         email: formData.email,
         inquireType: formData.inquireType,
         message: formData.message,
-      }),
-    })
-      .then((res) => res.text())
-      .then(() => {
-        setFormData({
-          name: "",
-          email: "",
-          inquireType: "",
-          message: "",
-        });
       })
-      .catch((error) => console.log(error));
-  };
+    );
+
+    setFormData({
+      name: "",
+      email: "",
+      inquireType: "",
+      message: "",
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
   return (
     <div
       className='text-white data-section flex flex-col gap-2 sm:gap-4 lg:gap-10 px-7 md:px-20 lg:px-25 py-5 md:pt-20 min-h-screen font-["Space_Grotesk"]'
