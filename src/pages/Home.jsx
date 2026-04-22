@@ -3,7 +3,8 @@ import bgHome from "../assets/bgHome.webp";
 import Button from "../components/Button";
 import HomeCard from "../components/HomeCard";
 import bgHome2 from "../assets/bgHome2.webp";
-import gsap from "gsap";
+import bgHomeMobile from "../assets/bgHomeMobile.jpg";
+import { gsap } from "gsap";
 
 const Home = () => {
   const [notMobile, setNotMobile] = useState(window.innerWidth >= 1024);
@@ -112,7 +113,7 @@ const Home = () => {
   HomeCards.forEach((card, id) => {
     gsap.to(`#card-${id+1}`, {
     x: `-=${totalWidth}`,
-    duration: 50,
+    duration: 35,
     ease: "linear",
     repeat: -1,
   })
@@ -126,8 +127,8 @@ const Home = () => {
         <img src={bgHome} className=" lg:w-full lg:h-screen object-cover" />
         <img src={bgHome2} className=" lg:w-full lg:h-screen object-cover" />
       </div>
-      <div className=" h-fit md:min-h-screen md:w-full z-30 md:absolute flex flex-col items-start justify-center px-7 md:px-10 lg:px-15 md:gap-10 gap-8 lg:gap-5 xl:px-25 xl:gap-20 py-15 sm:pt-10 md:py-15 xl:py-20"> 
-        <div className="md:max-w-180 flex flex-col items-start gap-5 lg:gap-3 xl:gap-5">
+      <div className=" h-fit min-h-screen md:w-full z-30 md:absolute flex flex-col sm:items-start items-center  justify-center px-7 md:px-10 lg:px-15 md:gap-10 gap-8 lg:gap-5 xl:px-25 xl:gap-20 py-15 sm:pt-10 md:py-15 xl:py-20"> 
+        <div className="md:max-w-180 order-2 md:order-0 flex flex-col items-start gap-5 lg:gap-3 xl:gap-5">
           <div className="flex items-center gap-2 md:gap-4 lg:gap-2 xl:gap-4 px-2">
             <span className="block h-[0.05rem] w-7 md:w-12 bg-[#e9c349] opacity-60"></span>
             <span className='block text-[#e9c349] font-["Space_Grotesk"] sm:tracking-wider md:tracking-widest sm:text-[0.8rem] text-[0.7rem] opacity-60'>
@@ -152,9 +153,10 @@ const Home = () => {
             <Button message={"CONTACT ME"} color={"#000000"} section={"contact"}/>
           </div>
         </div>
+        <img src={bgHomeMobile} className="order-1 sm:hidden h-90" />
         <div 
         ref={containerRef} 
-        className="flex gap-5 md:gap-10 flex-wrap lg:flex-nowrap h-30 lg:overflow-hidden xl:w-150 lg:w-110 p-3"
+        className="md:flex hidden gap-5 lg:gap-10 h-30 overflow-hidden xl:w-150 md:w-150 p-3"
         >
           {HomeCards.map((card) => {
             return (

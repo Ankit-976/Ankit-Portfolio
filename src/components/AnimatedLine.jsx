@@ -39,7 +39,7 @@ const AnimatedLine = () => {
   }, []);
 
   return (
-    <div className="lg:flex hidden justify-center">
+    <div className="xl:flex hidden justify-center">
       <svg ref={svgRef} height="150" width="1300" id="stringBox">
         <path ref={pathRef} d={initialPath} stroke="#e9c349" fill="none" strokeWidth="3" />
         Sorry, your browser does not support inline SVG.

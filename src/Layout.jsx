@@ -43,7 +43,7 @@ const Layout = () => {
   return (
     <div>
       <Navbar navLogoRef={navLogoRef} />
-      {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />}
+      {/* {loading && <Preloader setLoading={setLoading} navLogoRef={navLogoRef} />} */}
       <Home />
       <CursorFollower />
       <About />
