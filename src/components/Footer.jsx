@@ -18,7 +18,7 @@ const Footer = () => {
           END OF TRANSMISSION.
         </div>
         <div className="flex md:hidden justify-center md:text-[0.8rem] lg:text-[1rem] items-center tracking-wider text-[#ababab] order-3 md:order-0">
-          DO CHECK IN BIGGER SCREENS.
+          DO CHECK ON BIGGER SCREENS.
         </div>
         <div className="flex items-center order-2 md:order-0">
         <span className="text-[1.5rem] text-[#abababb5]">[</span>
