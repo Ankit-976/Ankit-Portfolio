@@ -5,7 +5,7 @@ Designed to create a strong first impression through smooth animations and a dar
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Link
 
 👉 https://ankit-portfolio-seven-lilac.vercel.app/
 
